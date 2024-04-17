@@ -14,9 +14,23 @@ void UDecreaseInventorySlotBPLib::DIS_SetAdjustedSizeDiff(UFGInventoryComponent*
   }
 }
 
-void UDecreaseInventorySlotBPLib::DIS_SetNumTotalInventorySlots(AFGUnlockSubsystem* TargetInventory, int32 size)
+void UDecreaseInventorySlotBPLib::DIS_SetNumTotalInventorySlots(AFGUnlockSubsystem* TargetUnlockSubsystem, int32 size)
 {
-  if (TargetInventory != nullptr) {
-    TargetInventory->mNumTotalInventorySlots = size;
+  if (TargetUnlockSubsystem != nullptr) {
+    TargetUnlockSubsystem->mNumTotalInventorySlots = size;
+  }
+}
+
+void UDecreaseInventorySlotBPLib::DIS_SetNumTotalArmEquipmentSlots(AFGUnlockSubsystem* TargetUnlockSubsystem, int32 size)
+{
+  if (TargetUnlockSubsystem != nullptr) {
+    TargetUnlockSubsystem->mNumTotalArmEquipmentSlots = size;
+  }
+}
+
+void UDecreaseInventorySlotBPLib::DIS_SetActiveEquipmentIndex(UFGInventoryComponentEquipment* TargetEquipmentComponent, int32 index)
+{
+  if (TargetEquipmentComponent != nullptr) {
+    TargetEquipmentComponent->mActiveEquipmentIndex = index;
   }
 }

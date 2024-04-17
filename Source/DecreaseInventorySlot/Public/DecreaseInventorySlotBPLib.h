@@ -2,6 +2,7 @@
 
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "FGInventoryComponent.h"
+#include "FGInventoryComponentEquipment.h"
 #include "FGUnlockSubsystem.h"
 #include "DecreaseInventorySlotBPLib.generated.h"
 
@@ -18,5 +19,11 @@ class DECREASEINVENTORYSLOT_API UDecreaseInventorySlotBPLib : public UBlueprintF
 		static void DIS_SetAdjustedSizeDiff(UFGInventoryComponent* TargetInventory, int32 size);
 		
 	UFUNCTION(BlueprintCallable, Category = "DecreaseInventorySlot")
-		static void DIS_SetNumTotalInventorySlots(AFGUnlockSubsystem* TargetInventory, int32 size);
+		static void DIS_SetNumTotalInventorySlots(AFGUnlockSubsystem* TargetUnlockSubsystem, int32 size);
+		
+  UFUNCTION(BlueprintCallable, Category = "DecreaseInventorySlot")
+		static void DIS_SetNumTotalArmEquipmentSlots(AFGUnlockSubsystem* TargetUnlockSubsystem, int32 size);
+		
+	UFUNCTION(BlueprintCallable, Category = "DecreaseInventorySlot")
+		static void DIS_SetActiveEquipmentIndex(UFGInventoryComponentEquipment* TargetEquipmentComponent, int32 index);
 };
